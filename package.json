@@ -1,0 +1,23 @@
+{
+  "name": "tefas-azure-functions",
+  "version": "1.0.0",
+  "description": "TEFAS Dashboard Azure Functions Backend",
+  "scripts": {
+    "start": "func start",
+    "test": "jest"
+  },
+  "dependencies": {
+    "axios": "^1.6.0",
+    "node-cache": "^5.1.2",
+    "exceljs": "^4.4.0",
+    "@azure/data-tables": "^13.2.2",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "jest": "^29.0.0",
+    "azure-functions-core-tools": "^4.x"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

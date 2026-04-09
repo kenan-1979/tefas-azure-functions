@@ -1,0 +1,11 @@
+{
+  "bindings": [
+    {
+      "name": "myTimer",
+      "type": "timerTrigger",
+      "direction": "in",
+      "schedule": "0 0 16 * * *",
+      "comment": "Her gün 16:00 UTC = 19:00 Istanbul"
+    }
+  ]
+}
