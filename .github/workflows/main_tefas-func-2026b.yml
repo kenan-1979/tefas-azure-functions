@@ -9,12 +9,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
-    - uses: actions/setup-node@v4
+
+    - name: Setup Node
+      uses: actions/setup-node@v4
       with:
         node-version: '20'
-    - run: npm install
-    - uses: Azure/functions-action@v1
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Deploy to Azure
+      uses: Azure/functions-action@v1
       with:
-        app-name: tefas-func-2026b
-        package: .
+        app-name: 'tefas-func-2026b'
+        package: '.'
         publish-profile: ${{ secrets.AZURE_FUNCTIONAPP_PUBLISH_PROFILE }}
+        respect-funcignore: true
