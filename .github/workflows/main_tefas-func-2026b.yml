@@ -18,10 +18,17 @@ jobs:
     - name: Install dependencies
       run: npm install
 
-    - name: Deploy to Azure
+    - name: Login to Azure
+      uses: azure/login@v2
+      with:
+        client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_D2433BA0B5584EBCA4A1EFEEE84B981E }}
+        tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_A703C43A9EF94C96A8AB84A2FAD17C54 }}
+        subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_22AD835704E84748A0185771218CCA24 }}
+
+    - name: Deploy to Azure Functions
       uses: Azure/functions-action@v1
       with:
         app-name: 'tefas-func-2026b'
         package: '.'
-        publish-profile: ${{ secrets.AZURE_FUNCTIONAPP_PUBLISH_PROFILE }}
-        respect-funcignore: true
+
+        
